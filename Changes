@@ -1,5 +1,11 @@
 Revision history for Perl extension Cache::Bounded.
 
+1.01  2004/04/02
+
+	Properly blessing into the class name.
+	Full copyright and license information.
+	Documentation on module installation.
+
 1.00  2004/03/29
 
 	Derived from HMS tool Cache::Sloppy (v1.3 2004/03/02)

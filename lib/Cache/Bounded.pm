@@ -101,7 +101,10 @@ Use scalar data.
 
 =head1 AUTHORISHIP:
 
-    Phillip Pollard (bennie@cpan.org)
+    Cache::Bounded v1.01 2004/04/02
+
+    (c) 2004, Phillip Pollard <bennie@cpan.org>
+    Released under the Perl Artistic License
 
     Derived from Cache::Sloppy v1.3 2004/03/02
     With permission granted from Health Market Science, Inc.
@@ -109,13 +112,14 @@ Use scalar data.
 =cut
 
 package Cache::Bounded;
-$Cache::Bounded::VERSION='1.0';
+$Cache::Bounded::VERSION='1.01';
 
 use strict;
 
 sub new {
+  my $class = shift @_;
   my $self = {};
-  bless $self;
+  bless($self,$class);
 
   $self->{cache}    = {};
   $self->{count}    = 0;
