@@ -1,0 +1,10 @@
+Changes
+Makefile.PL
+MANIFEST
+META.yml
+README
+lib/Cache/Bounded.pm
+t/0_load.t
+t/1_insert.t
+t/2_read.t
+t/3_resize.t
