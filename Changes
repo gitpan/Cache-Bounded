@@ -1,5 +1,9 @@
 Revision history for Perl extension Cache::Bounded.
 
+1.02  2004/04/05
+
+	Corrected accidental Cache::Sloppy calls in the test suite.
+
 1.01  2004/04/02
 
 	Properly blessing into the class name.

@@ -101,7 +101,7 @@ Use scalar data.
 
 =head1 AUTHORISHIP:
 
-    Cache::Bounded v1.01 2004/04/02
+    Cache::Bounded v1.02 2004/04/05
 
     (c) 2004, Phillip Pollard <bennie@cpan.org>
     Released under the Perl Artistic License
@@ -112,7 +112,7 @@ Use scalar data.
 =cut
 
 package Cache::Bounded;
-$Cache::Bounded::VERSION='1.01';
+$Cache::Bounded::VERSION='1.02';
 
 use strict;
 

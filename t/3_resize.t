@@ -1,10 +1,10 @@
-use Cache::Sloppy;
-use Test; 
+use Cache::Bounded;
+use Test;
 use strict;
 
 BEGIN { plan tests => 2 }; 
 
-my $cache = new Cache::Sloppy ({ size => 25, interval => 25 });
+my $cache = new Cache::Bounded ({ size => 25, interval => 25 });
 
 for ( 1 .. 25 ) {
   $cache->set($_,$_);
