@@ -101,7 +101,7 @@ Use scalar data.
 
 =head1 AUTHORISHIP:
 
-    Cache::Bounded v1.02 2004/04/05
+    Cache::Bounded v1.03 2004/04/06
 
     (c) 2004, Phillip Pollard <bennie@cpan.org>
     Released under the Perl Artistic License
@@ -112,7 +112,7 @@ Use scalar data.
 =cut
 
 package Cache::Bounded;
-$Cache::Bounded::VERSION='1.02';
+$Cache::Bounded::VERSION='1.03';
 
 use strict;
 
@@ -126,9 +126,9 @@ sub new {
   $self->{interval} = 1000;
   $self->{size}     = 500000;
 
-  if ( UNIVERSAL::isa($_[1],'HASH') ) {
-    $self->{interval} = $_[1]->{interval} if $_[1]->{interval} > 1;
-    $self->{size}     = $_[1]->{size}     if $_[1]->{size}     > 1;
+  if ( UNIVERSAL::isa($_[0],'HASH') ) {
+    $self->{interval} = $_[0]->{interval} if $_[0]->{interval} > 1;
+    $self->{size}     = $_[0]->{size}     if $_[0]->{size}     > 1;
   }
 
   return $self;

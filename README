@@ -1,5 +1,5 @@
 
-   Cache::Bounded - A size-aware in-memory cache optimized for speed - v 1.01
+  Cache::Bounded - A size-aware in-memory cache optimized for speed - v 1.03
 
 ================================================================================
 SYNOPSIS:
