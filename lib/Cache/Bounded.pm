@@ -1,3 +1,54 @@
+package Cache::Bounded;
+$Cache::Bounded::VERSION='v1.05';
+
+use strict;
+
+sub new {
+  my $class = shift @_;
+  my $self = {};
+  bless($self,$class);
+
+  $self->{cache}    = {};
+  $self->{count}    = 0;
+  $self->{interval} = 1000;
+  $self->{size}     = 500000;
+
+  if ( UNIVERSAL::isa($_[0],'HASH') ) {
+    $self->{interval} = $_[0]->{interval} if $_[0]->{interval} > 1;
+    $self->{size}     = $_[0]->{size}     if $_[0]->{size}     > 1;
+  }
+
+  return $self;
+}
+
+sub get {
+  my $self = shift @_;
+  my $key  = shift @_;
+  return $self->{cache}->{$key};
+}
+
+sub purge {
+  my $self = shift @_;
+  $self->{count} = 0;
+  $self->{cache} = {};
+}
+
+sub set {
+  my $self = shift @_;
+  my $key  = shift @_;
+  my $data = shift @_;
+  $self->{count}++;
+
+  if ( $self->{count} > $self->{interval} && scalar(keys %{$self->{cache}}) > $self->{size}) {
+    $self->purge();
+  }
+
+  $self->{cache}->{$key} = $data;
+  return 1;
+}
+
+1;
+
 =head1 NAME:
 
 Cache::Bounded - A size-aware in-memory cache optimized for speed.
@@ -78,6 +129,10 @@ been cached foe that key, the retruned value is undefined.
 Caches the given value for the given key. The cache size is checked during 
 the set method. If a purge occurs, the value is cached post-purge.
 
+=head3 purge()
+
+This dumps the currently in-memory cache.
+
 =head1 KNOWN ISSUES:
 
 =head3 Memory Allocation
@@ -101,58 +156,12 @@ Use scalar data.
 
 =head1 AUTHORISHIP:
 
-    Cache::Bounded v1.03 2004/04/06
+    Cache::Bounded v1.05 2011/09/30
 
-    (c) 2004, Phillip Pollard <bennie@cpan.org>
+    (c) 2011, Phillip Pollard <bennie@cpan.org>
     Released under the Perl Artistic License
 
     Derived from Cache::Sloppy v1.3 2004/03/02
     With permission granted from Health Market Science, Inc.
 
 =cut
-
-package Cache::Bounded;
-$Cache::Bounded::VERSION='1.03';
-
-use strict;
-
-sub new {
-  my $class = shift @_;
-  my $self = {};
-  bless($self,$class);
-
-  $self->{cache}    = {};
-  $self->{count}    = 0;
-  $self->{interval} = 1000;
-  $self->{size}     = 500000;
-
-  if ( UNIVERSAL::isa($_[0],'HASH') ) {
-    $self->{interval} = $_[0]->{interval} if $_[0]->{interval} > 1;
-    $self->{size}     = $_[0]->{size}     if $_[0]->{size}     > 1;
-  }
-
-  return $self;
-}
-
-sub get {
-  my $self = shift @_;
-  my $key  = shift @_;
-  return $self->{cache}->{$key};
-}
-
-sub set {
-  my $self = shift @_;
-  my $key  = shift @_;
-  my $data = shift @_;
-  $self->{count}++;
-
-  if ( $self->{count} > $self->{interval} && scalar(keys %{$self->{cache}}) > $self->{size}) {
-    $self->{count} = 0;
-    $self->{cache} = {};
-  }
-
-  $self->{cache}->{$key} = $data;
-  return 1;
-}
-
-1;
