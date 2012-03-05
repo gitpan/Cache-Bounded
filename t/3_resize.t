@@ -1,8 +1,7 @@
 use Cache::Bounded;
-use Test;
+use Test::Simple tests => 2;
 use strict;
 
-BEGIN { plan tests => 2 }; 
 
 my $cache = new Cache::Bounded ({ size => 25, interval => 25 });
 

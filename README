@@ -1,5 +1,5 @@
 
-  Cache::Bounded - A size-aware in-memory cache optimized for speed - v1.05
+  Cache::Bounded - A size-aware in-memory cache optimized for speed - v1.06
 
 ================================================================================
 SYNOPSIS:
@@ -78,7 +78,7 @@ USAGE:
 
    get($key)
     Returns the cached value associated with the given key. If no value has
-    been cached foe that key, the retruned value is undefined.
+    been cached for that key, the returned value is undefined.
 
    set($key,$value)
     Caches the given value for the given key. The cache size is checked
@@ -113,9 +113,9 @@ KNOWN ISSUES:
 AUTHORISHIP:
 ================================================================================
 
-    Cache::Bounded v1.05 2011/09/30
+    Cache::Bounded v1.06 2012/03/04
 
-    (c) 2011, Phillip Pollard <bennie@cpan.org>
+    (c) 2004-2012, Phillip Pollard <bennie@cpan.org>
     Released under the Perl Artistic License
 
     Derived from Cache::Sloppy v1.3 2004/03/02

@@ -1,5 +1,5 @@
 package Cache::Bounded;
-$Cache::Bounded::VERSION='v1.05';
+$Cache::Bounded::VERSION='v1.06';
 
 use strict;
 
@@ -122,7 +122,7 @@ The default of this value is 500,000.
 =head3 get($key)
 
 Returns the cached value associated with the given key. If no value has 
-been cached foe that key, the retruned value is undefined.
+been cached for that key, the returned value is undefined.
 
 =head3 set($key,$value)
 
@@ -156,9 +156,9 @@ Use scalar data.
 
 =head1 AUTHORISHIP:
 
-    Cache::Bounded v1.05 2011/09/30
+    Cache::Bounded v1.06 2012/03/04
 
-    (c) 2011, Phillip Pollard <bennie@cpan.org>
+    (c) 2004-2012, Phillip Pollard <bennie@cpan.org>
     Released under the Perl Artistic License
 
     Derived from Cache::Sloppy v1.3 2004/03/02
