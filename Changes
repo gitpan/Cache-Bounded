@@ -1,5 +1,10 @@
 Revision history for Perl extension Cache::Bounded.
 
+1.08  2014/03/10
+
+	Added a POD test
+	Moving to an automated build of meta data
+
 1.07  2014/02/25
 
 	Updated meta information

@@ -1,6 +1,7 @@
 package Cache::Bounded;
-$Cache::Bounded::VERSION='1.07';
+$Cache::Bounded::VERSION='1.08';
 
+use warnings;
 use strict;
 
 sub new {
@@ -162,7 +163,7 @@ Use scalar data.
 
 =head1 VERSION
 
-    Cache::Bounded v1.07 (2014/02/25)
+    Cache::Bounded v1.08 (2014/03/10)
 
 =head1 COPYRIGHT
 

@@ -1,5 +1,5 @@
 
-  Cache::Bounded - A size-aware in-memory cache optimized for speed - 1.07
+  Cache::Bounded - A size-aware in-memory cache optimized for speed - 1.08
 
 ================================================================================
 SYNOPSIS:
@@ -55,7 +55,7 @@ USAGE:
 AUTHORISHIP:
 ================================================================================
 
-    Cache::Bounded 1.07 2014/02/25
+    Cache::Bounded 1.08 2014/03/10
 
     (c) 2004-2014, Phillip Pollard <bennie@cpan.org>
     Released under the Perl Artistic License

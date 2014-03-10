@@ -2,10 +2,12 @@ Changes
 LICENSE
 Makefile.PL
 MANIFEST
+META.json
 META.yml
 README
 lib/Cache/Bounded.pm
-t/0_load.t
-t/1_insert.t
-t/2_read.t
-t/3_resize.t
+t/00-pod.t
+t/01-load
+t/02-insert
+t/03-read.t
+t/04-resize.t
